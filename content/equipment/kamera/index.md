@@ -1,0 +1,4 @@
+---
+title: Kamera
+layout: prose
+---

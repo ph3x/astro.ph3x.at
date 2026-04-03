@@ -1,0 +1,23 @@
+{{ with site.Menus.main }}
+  <menu class="hidden" id="menu">
+    {{ range where . "Parent" "" }}
+      <li itemscope itemtype="http://www.schema.org/SiteNavigationElement">
+        <a aria-current="{{ or (page.IsMenuCurrent .Menu .) (page.HasMenuCurrent .Menu .) }}" href="{{ .URL }}" itemprop="url"{{ if .HasChildren }} class="has-children"{{ end }}>
+          <span itemprop="name">{{ .Name }}</span>
+          {{ if .HasChildren }}<span class="menu-chevron" aria-hidden="true">›</span>{{ end }}
+        </a>
+        {{ if .HasChildren }}
+          <ul class="submenu">
+            {{ range .Children }}
+              <li>
+                <a aria-current="{{ or (page.IsMenuCurrent .Menu .) (page.HasMenuCurrent .Menu .) }}" href="{{ .URL }}">
+                  <span>{{ .Name }}</span>
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </li>
+    {{ end }}
+  </menu>
+{{ end }}

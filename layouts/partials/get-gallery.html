@@ -1,0 +1,41 @@
+{{ $gallery := "" }}
+{{ $images := where (.Resources.ByType "image") "Params.hidden" "ne" true }}
+
+{{/* For sections with no direct images, find a thumbnail from first child page */}}
+{{ $thumbnailPage := . }}
+{{ if and (not .IsPage) (eq (len $images) 0) }}
+  {{ range first 1 (where .RegularPagesRecursive "Params.private" "ne" true) }}
+    {{ $thumbnailPage = . }}
+    {{ $images = where (.Resources.ByType "image") "Params.hidden" "ne" true }}
+  {{ end }}
+{{ end }}
+
+{{ if gt (len $images) 0 }}
+  {{ $covers := where (.Resources.ByType "image") "Params.cover" "eq" true }}
+  {{ $cover := "" }}
+  {{ if ge (len $covers) 0 }}
+    {{ $cover = index $covers 0 }}
+  {{ end }}
+  {{ $featured := $cover | default (($thumbnailPage.Resources.ByType "image").GetMatch (.Params.featured_image | default "*feature*")) | default (index $images 0) }}
+  {{ $thumbnail := $featured.Filter (slice images.AutoOrient (images.Process "fit 600x600")) }}
+  {{ $color := index $thumbnail.Colors 0 | default "transparent" }}
+  {{ $imageCount := 0 }}
+  {{ $albumCount := 0 }}
+  {{ if .IsPage }}
+    {{ $imageCount = len (where (.Resources.ByType "image") "Params.hidden" "ne" true) }}
+  {{ else }}
+    {{ range where .RegularPagesRecursive "Params.private" "ne" true }}
+      {{ $albumCount = add $albumCount 1 }}
+      {{ $imageCount = add $imageCount (len (where (.Resources.ByType "image") "Params.hidden" "ne" true)) }}
+    {{ end }}
+  {{ end }}
+  {{ $gallery = dict
+    "page" $
+    "images" $images
+    "thumbnail" $thumbnail
+    "color" $color
+    "albumCount" $albumCount
+    "imageCount" $imageCount
+  }}
+{{ end }}
+{{ return $gallery }}

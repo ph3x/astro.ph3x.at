@@ -1,0 +1,10 @@
+{{ define "main" }}
+  {{ partial "title.html" . }}
+  <section class="galleries">
+    {{ range site.RegularPages }}
+      {{ if and (ne .RelPermalink $.RelPermalink) (not .Params.private) }}
+        {{ partial "album-card.html" . }}
+      {{ end }}
+    {{ end }}
+  </section>
+{{ end }}

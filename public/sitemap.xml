@@ -6,6 +6,28 @@
   </url><url>
     <loc>http://localhost:1313/categories/</loc>
   </url><url>
+    <loc>http://localhost:1313/deep-sky-objekte/</loc>
+  </url><url>
+    <loc>http://localhost:1313/equipment/</loc>
+  </url><url>
+    <loc>http://localhost:1313/galaxien/</loc>
+  </url><url>
+    <loc>http://localhost:1313/gallerie/</loc>
+  </url><url>
+    <loc>http://localhost:1313/equipment/kamera/</loc>
+  </url><url>
+    <loc>http://localhost:1313/kontakt/</loc>
+  </url><url>
+    <loc>http://localhost:1313/planeten/mond/</loc>
+  </url><url>
+    <loc>http://localhost:1313/equipment/montierung/</loc>
+  </url><url>
+    <loc>http://localhost:1313/planeten/</loc>
+  </url><url>
     <loc>http://localhost:1313/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/equipment/teleskop/</loc>
+  </url><url>
+    <loc>http://localhost:1313/ueber-mich/</loc>
   </url>
 </urlset>
