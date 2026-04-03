@@ -1,0 +1,4 @@
+baseURL = 'https://astro.ph3x.at/'
+locale = 'de-de'
+title = 'Astrofotografie * astro.ph3x.at'
+theme= 'gallery'
