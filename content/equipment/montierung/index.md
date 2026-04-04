@@ -3,7 +3,7 @@ title: Montierung — Skywatcher EQ6-R Pro
 layout: prose
 ---
 
-![Skywatcher EQ6-R Pro](skywatcher-eq6r-pro.jpg)
+![Skywatcher EQ6-R Pro](/images/equipment/skywatcher-eq6r-pro.jpg)
 
 Die **Sky-Watcher EQ6-R Pro** ist eine computergestützte parallaktische GoTo-Montierung und das Herzstück meines Aufbaus. Dank riemengetriebenem Antrieb und hoher Tragkraft eignet sie sich hervorragend für die Langzeitbelichtungs-Astrofotografie.
 

@@ -3,7 +3,7 @@ title: Kamera — Canon EOS 1000D
 layout: prose
 ---
 
-![Canon EOS 1000D](canon-eos-1000d.jpg)
+![Canon EOS 1000D](/images/equipment/canon-eos-1000d.jpg)
 
 Die **Canon EOS 1000D** (in Nordamerika als *EOS Rebel XS*, in Japan als *EOS Kiss F* bekannt) ist eine digitale Spiegelreflexkamera, die ich unmodifiziert für die Astrofotografie einsetze.
 
