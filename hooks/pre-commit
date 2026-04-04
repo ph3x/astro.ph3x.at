@@ -2,8 +2,4 @@
 set -euo pipefail
 
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-
 "$REPO_DIR/process-images.sh"
-
-# Stage any new/modified files produced by the script
-git -C "$REPO_DIR" add "$REPO_DIR/content/" 2>/dev/null || true
