@@ -53,12 +53,7 @@ while IFS= read -r -d '' tif; do
     sidecar="$(dirname "$tif")/${name}.yaml"
     image_title=""
     if [ -f "$sidecar" ]; then
-        image_title="$(python3 -c "
-import sys, re
-content = open('$sidecar').read()
-m = re.search(r'^title:\s*[\"\'']?(.*?)[\"\'']?\s*$', content, re.MULTILINE)
-print(m.group(1).strip('\"\'') if m else '')
-")"
+        image_title="$(grep '^title:' "$sidecar" | head -1 | sed 's/^title:[[:space:]]*//' | sed 's/^["\x27]//' | sed 's/["\x27][[:space:]]*$//')"
         [ -n "$image_title" ] && echo "   Caption: $image_title"
     fi
 

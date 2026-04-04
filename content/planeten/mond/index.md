@@ -1,3 +1,8 @@
 ---
 title: Mond
+resources:
+  - src: 28022026_Canon_EOS_1000D_100x0.5s_Mond.webp
+    title: "28.02.2026 - Canon EOS 1000D unmodifiziert, 300mm, 100x0.5"
+    params:
+      r2url: "https://images.astro.ph3x.at/planeten/mond/28022026_Canon_EOS_1000D_100x0.5s_Mond.tif"
 ---
